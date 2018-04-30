@@ -1,0 +1,51 @@
+<template name="abc_report">
+    <!-- Page heading -->
+    {{> pageHeading title='Store Wise Report' category='Reports' }}
+    <div class="wrapper wrapper-content animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Store Wise Report</h5>
+                    </div>
+                    <div class="ibox-content">
+                        Select the store you want to see the ABC report for and the report will update
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Other Utilities</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <a class="btn btn-info btnTest" type="button" href="https://qart.fieldassist.io/Content/Documentation/Product.pdf" target="_blank"><i
+                                class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">Download Documentation</span></a>
+                        <button class="btn btn-primary" type="button"><i
+                                class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">Download Data</span></button>
+                        {{#if isDataPresent}}
+                        {{else}}
+                        <button class="btn btn-danger btnEmptyCollection {{#if isDataPresent}}disabled{{/if}}" type="button"><i
+                                class="fa fa-ban"></i>&nbsp;&nbsp;<span class="bold">Empty Product Collection</span></button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Already Imported Data</h5>
+                    </div>
+                    <div class="ibox-content">
+                        {{> reactiveTable settings=settings}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

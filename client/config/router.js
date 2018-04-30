@@ -203,6 +203,7 @@ FlowRouter.route('/products', {
     }
 });
 
+// ABC UPLOAD
 FlowRouter.route('/abcdataupload', {
     subscriptions: function(params, queryParams) {
         this.register('abc_data', Meteor.subscribe('excelimportstatus'));
@@ -212,6 +213,15 @@ FlowRouter.route('/abcdataupload', {
     }
 });
 
+// ABC REPORT
+FlowRouter.route('/abcreport', {
+    // subscriptions: function(params, queryParams) {
+    //     this.register('abc_report', Meteor.subscribe('excelimportstatus'));
+    // },
+    action: function() {
+        BlazeLayout.render("mainLayout", {content: "abc_report"});
+    }
+});
 
 FlowRouter.route('/formUpload', {
     action: function() {

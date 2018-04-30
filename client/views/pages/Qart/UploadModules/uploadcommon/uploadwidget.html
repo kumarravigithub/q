@@ -1,0 +1,40 @@
+<template name="uploadForm">
+  {{#with currentUpload}}
+  Uploading <b>{{file.name}}</b>:
+  <div class="progress progress-striped active">
+      <div style="width: {{progress.get}}%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{progress.get}}" role="progressbar" class="progress-bar progress-bar-danger">
+          <span class="sr-only">40% Complete (success)</span>
+      </div>
+  </div>
+    <!-- <span id="progress">{{progress.get}}%</span> -->
+  {{else}}
+    <input id="fileInput" type="file" />
+    <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
+  {{/with}}
+</template>
+
+<template name="uploadedFiles">
+  {{#if uploadedFiles.count}}
+    <!-- <ul>
+      {{#each file in uploadedFiles.each}}
+        <li>
+          <a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a>
+        </li>
+      {{/each}}
+    </ul> -->
+    <ul class="notes">
+        {{#each file in uploadedFiles.each}}
+        <li>
+            <div>
+                <small>12:03:28 12-04-2014</small>
+                <h4><a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></h4>
+                <p><a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></p><p>, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                <a class="notes" href="#"><i class="fa fa-trash-o "></i></a>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+  {{else}}
+    <div>No files uploaded, yet</div>
+  {{/if}}
+</template>

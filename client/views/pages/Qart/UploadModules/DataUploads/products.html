@@ -1,0 +1,96 @@
+<template name="products">
+    <!-- Page heading -->
+    {{> pageHeading title='Products Bulk Upload' category='Data Uploads' }}
+    <div class="wrapper wrapper-content animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Product Import Module</h5>
+                    </div>
+                    <div class="ibox-content">
+                        Upload an excel file containing the list of products and it's parameters/tags to populate it in
+                        the database. You can untick the checkbox <strong> incremental import </strong> if you want to
+                        import the products with a clean slate. Please remember to backup the system using the <strong>backup
+                        menu</strong> on the left side.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Upload and import excel product list</h5>
+                        <!--<div class="ibox-tools">-->
+                        <!--<a class="collapse-link">-->
+                        <!--<i class="fa fa-chevron-up"></i>-->
+                        <!--</a>-->
+                        <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                        <!--<i class="fa fa-wrench"></i>-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu dropdown-user">-->
+                        <!--<li><a href="#">Config option 1</a>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Config option 2</a>-->
+                        <!--</li>-->
+                        <!--</ul>-->
+                        <!--<a class="close-link">-->
+                        <!--<i class="fa fa-times"></i>-->
+                        <!--</a>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="ibox-content">
+                     <input class="file-upload-input" type="file" name="file"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Download Example of the excel file to be uploaded</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <a class="btn btn-success" type="button" href="files/Product.xlsx" target="_blank"><i
+                                    class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">Download</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Other Utilities</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <a class="btn btn-info btnTest" type="button" href="https://qart.fieldassist.io/Content/Documentation/Product.pdf" target="_blank"><i
+                                class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">Download Documentation</span></a>
+                        <button class="btn btn-primary" type="button"><i
+                                class="fa fa-download"></i>&nbsp;&nbsp;<span class="bold">Download Data</span></button>
+                        {{#if isDataPresent}}
+                        {{else}}
+                        <button class="btn btn-danger btnEmptyCollection {{#if isDataPresent}}disabled{{/if}}" type="button"><i
+                                class="fa fa-ban"></i>&nbsp;&nbsp;<span class="bold">Empty Product Collection</span></button>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Already Imported Data</h5>
+                    </div>
+                    <div class="ibox-content">
+                        {{> reactiveTable settings=settings}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

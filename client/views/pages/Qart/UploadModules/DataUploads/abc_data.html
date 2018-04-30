@@ -1,0 +1,54 @@
+<template name="abc_data">
+    <!-- Page heading -->
+    {{> pageHeading title='ABC Analysis Data Upload' category='Data Uploads' }}
+    <div class="wrapper wrapper-content animated fadeIn">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>ABC Analysis Data Upload</h5>
+                    </div>
+                    <div class="ibox-content">
+                        Upload an excel file containing the datasheet of sell through etc of products and store to populate it in
+                        the database. You can untick the checkbox <strong> incremental import </strong> if you want to
+                        import the products with a clean slate. Please remember to backup the system using the <strong>backup
+                        menu</strong> on the left side.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if importStatus}}
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Download Example of the excel file to be uploaded</h5>
+                    </div>
+                    <div class="ibox-content">
+                        {{>uploadForm}}
+                    </div>
+                </div>
+                {{else}}
+                <!-- TODO: 2 cases, DONE with import (to be implemented) or, processing (already implemented) -->
+                <div class="widget red-bg p-lg text-center">
+                    <div class="m-b-md">
+                        <i class="fa fa-gear fa-4x shake-little shake-constant"></i>
+                        <i class="gear"></i><i class="gear"></i>
+                        <h1 class="m-xs">{{statusdoc.message}}</h1>
+                        <h3 class="font-bold no-margins">
+                          Rows Imported : {{statusdoc.excellinecount}}
+                        </h3>
+                        <small>Unique Stores : {{statusdoc.uniquestorecount}}</small>
+                        <small>Unique Products : {{statusdoc.uniqueproductcount}}</small>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                {{>uploadedFiles}}
+            </div>
+        </div>
+    </div>
+</template>

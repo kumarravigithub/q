@@ -1,9 +1,11 @@
-report1 = function() {
-  storecode = "0020013371";
-  Meteor.call('getDistinctStores', function(err, result) {
+report1 = function(fileInfo) {
+  // storecode = "0020013371";
+  fileid = fileInfo._id;
+  Meteor.call('getDistinctStores', fileid, function(err, result) {
+    uniqueGencats=result.uniqueGencats;
+    result=result.uniqueStores;
     for (l = 0; l < result.length; l++) {
-      // console.log(result[l]);
-      // continue;
+      storecode = result[l];
       var resultQ = product.find({
         shiptocustomer2: storecode
       }).fetch();
@@ -52,10 +54,7 @@ report1 = function() {
         sumofstore += data[k].sum;
         // console.log(data[k].sum);
       }
-      // console.log(sumofstore);
-
       pre_store_calculation_data.sort((a, b) => Number(b.netretailvalue) - Number(a.netretailvalue));
-
 
       store_contrib_sum = 0;
       for (i = 0; i < pre_store_calculation_data.length; i++) {
@@ -75,11 +74,46 @@ report1 = function() {
             // THIS DEFAULT CASE CATCHES THE F*$&#NG FLOATING POINT NUMBERS
             pre_store_calculation_data[i].abc_store_level = "C"
         }
+        products_withabc.insert(pre_store_calculation_data[i])
       }
+      fileInfo.status.message = "Generating report: " + l + " store(s)";
+      fileInfo.status.status = "REPORTING";
+      fileInfo.status.timestamp = new Date();
+      __pre_excel_process.upsert({
+        fileid: fileInfo._id
+      }, {
+        $set: fileInfo.status
+      });
       console.log("Done for " + l);
+      if (storecode == "0020026418") {
+        console.log("PAKDAYA");
+      }
+    }
+    fileInfo.status.message = "DONE";
+    fileInfo.status.status = "DONE";
+    __pre_excel_process.upsert({
+      fileid: fileInfo._id
+    }, {
+      $set: fileInfo.status
+    });
+    Images.update({
+      _id: fileInfo._id
+    }, {
+      $set: fileInfo
+    });
+    for (l = 0; l < result.length; l++) {
+      storecode=result[l];
+      storeA = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "A"}).count();
+      storeB = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "B"}).count();
+      storeC = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "C"}).count();
+      for(i=0;i<uniqueGencats.length;i++) {
+        gencatA = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "A", gencat2:uniqueGencats[i]}).count();
+        gencatB = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "B", gencat2:uniqueGencats[i]}).count();
+        gencatC = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "C", gencat2:uniqueGencats[i]}).count();
+      }
     }
   });
+
+
 }
-
-
 // data[k].products[i].store_contrib = data[k].products[i].netretailvalue / sumofstore

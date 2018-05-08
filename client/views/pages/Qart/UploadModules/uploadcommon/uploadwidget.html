@@ -26,10 +26,13 @@
         {{#each file in uploadedFiles.each}}
         <li>
             <div>
-                <small>12:03:28 12-04-2014</small>
+                <small>{{file.status.timestamp}}</small>
                 <h4><a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></h4>
-                <p><a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></p><p>, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                <a class="notes" href="#"><i class="fa fa-trash-o "></i></a>
+                <p>Size: {{sizeinMB file.size}}</p><p>Rows: {{file.status.excellinecount}}</p>
+                <p>Stores: {{file.status.uniquestorecount}}</p>
+                <p>Products: {{file.status.uniqueproductcount}}</p>
+                <p>Gencats: {{file.status.uniquegencat}}</p>
+                <a class="notes" href="#" id="deleteFile" data="{{file._id}}"><i class="fa fa-trash-o "></i></a>
             </div>
         </li>
         {{/each}}

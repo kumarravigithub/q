@@ -43,5 +43,31 @@ Template.uploadForm.events({
 Template.uploadedFiles.helpers({
   uploadedFiles: function () {
     return Images.find();
+  },
+  sizeinMB: function(size) {
+    return Math.round((size/1024/1024) * 100) / 100 + " MB";
   }
 });
+Template.uploadedFiles.events({
+  'click #deleteFile': function(e, template) {
+    fileid=$(e.currentTarget).attr('data');
+    swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover this file and all the data rows, products, store data and reports realted to this Excel File.!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        closeOnConfirm: false
+    }, function () {
+        Meteor.call('file_delete', fileid, function(err) {
+            if(err) {
+              swal("Can't Delete!", "There was some error, please check browser console.", "warning");
+            } else {
+              swal("Deleted!", "Your file has been deleted.", "success");
+            }
+        });
+
+    });
+  }
+})

@@ -203,6 +203,13 @@ FlowRouter.route('/products', {
     }
 });
 
+// product master
+FlowRouter.route('/productmaster', {
+    action: function() {
+        BlazeLayout.render("mainLayout", {content: "productmaster"});
+    }
+});
+
 // ABC UPLOAD
 FlowRouter.route('/abcdataupload', {
     subscriptions: function(params, queryParams) {
@@ -214,12 +221,12 @@ FlowRouter.route('/abcdataupload', {
 });
 
 // ABC REPORT
-FlowRouter.route('/abcreport', {
-    // subscriptions: function(params, queryParams) {
-    //     this.register('abc_report', Meteor.subscribe('excelimportstatus'));
-    // },
+FlowRouter.route('/abc_dashboard', {
+  subscriptions: function(params, queryParams) {
+      this.register('abc_data', Meteor.subscribe('excelimportstatus', "ANY"));
+  },
     action: function() {
-        BlazeLayout.render("mainLayout", {content: "abc_report"});
+        BlazeLayout.render("mainLayout", {content: "abc_dashboard"});
     }
 });
 

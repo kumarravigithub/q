@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a5ebe70-2544-4843-98ec-666a61a2da19" name="Default" comment="" />
+    <list default="true" id="2a5ebe70-2544-4843-98ec-666a61a2da19" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/config/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/config/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/common/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/common/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/reports/abc_report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_report.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/reports/abc_report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/lib/images.collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lib/images.collection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/bcrypt_lib.node" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,29 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="abc_data.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+      <file leaf-file-name="images.collection.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/lib/images.collection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="abc_data.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="products.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/modules/DataUploads/products.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="240">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -60,10 +58,16 @@
       <find>Log out</find>
       <find>produ</find>
       <find>logintwo</find>
+      <find>abcdataupload</find>
+      <find>uploadform</find>
+      <find>updateMessage</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/views/common</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,10 +90,15 @@
         <option value="$PROJECT_DIR$/client/views/common/top-navbar.js" />
         <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/products.html" />
         <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/products.js" />
+        <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.js" />
         <option value="$PROJECT_DIR$/client/config/router.js" />
         <option value="$PROJECT_DIR$/client/views/common/navigation.html" />
         <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html" />
+        <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.html" />
+        <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.html" />
+        <option value="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.js" />
         <option value="$PROJECT_DIR$/server/modules/DataUploads/products.js" />
+        <option value="$PROJECT_DIR$/lib/lib/images.collection.js" />
       </list>
     </option>
   </component>
@@ -114,6 +123,9 @@
     <option name="width" value="1920" />
     <option name="height" value="989" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -135,20 +147,7 @@
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
               <item name="q" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="q" type="b2602c69:ProjectViewProjectNode" />
-              <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="q" type="b2602c69:ProjectViewProjectNode" />
-              <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
@@ -160,29 +159,13 @@
             <path>
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
               <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Qart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
               <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Qart" type="462c0819:PsiDirectoryNode" />
-              <item name="UploadModules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="q" type="b2602c69:ProjectViewProjectNode" />
-              <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Qart" type="462c0819:PsiDirectoryNode" />
-              <item name="UploadModules" type="462c0819:PsiDirectoryNode" />
-              <item name="DataUploads" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
@@ -194,13 +177,6 @@
               <item name="q" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="q" type="b2602c69:ProjectViewProjectNode" />
-              <item name="q" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="q" type="b2602c69:ProjectViewProjectNode" />
@@ -226,17 +202,18 @@
     <property name="node.js.selected.package.prettier" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules" />
-      <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads" />
-      <recent name="$PROJECT_DIR$/client/views/pages/Qart/accounts" />
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/client/views/pages/Qart/DataUploads" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/reports" />
       <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads" />
       <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules" />
       <recent name="$PROJECT_DIR$/client/views/pages/Qart" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads" />
+      <recent name="$PROJECT_DIR$/client/views/pages/Qart/UploadModules" />
+      <recent name="$PROJECT_DIR$/client/views/pages/Qart/accounts" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/client/views/pages/Qart/DataUploads" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -265,11 +242,14 @@
       <workItem from="1524477431163" duration="9435000" />
       <workItem from="1524813005056" duration="20000" />
       <workItem from="1524813066296" duration="10292000" />
+      <workItem from="1525781103821" duration="32000" />
+      <workItem from="1525781151384" duration="19000" />
+      <workItem from="1525781208781" duration="5278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29131000" />
+    <option name="totallyTimeSpent" value="34460000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,26 +261,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="989" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49928057" visible="true" weight="0.18957347" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49928057" visible="true" weight="0.18921833" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32874355" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.5007194" side_tool="true" weight="0.1875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.4753363" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.122788765" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +289,54 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -331,13 +358,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/route.js" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -359,13 +380,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/route.js" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -373,13 +388,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/modules/DataUploads/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/modules/DataUploads/products.js" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -418,13 +427,7 @@
         <state relative-caret-position="-11" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pubsub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pubsub.js" />
     <entry file="file://$PROJECT_DIR$/client/views/common/right-sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -439,20 +442,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="76" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/route.js" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/products.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -467,13 +457,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/pages/otherpages/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/otherpages/register.html" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/accounts/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -481,13 +465,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/modules/accounts/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/modules/accounts/register.js" />
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/accounts/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -530,38 +508,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/config/router.js">
+    <entry file="file://$PROJECT_DIR$/client/views/head.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="180">
+          <caret line="12" column="76" selection-start-line="12" selection-end-line="13" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/common/navigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
+        <state relative-caret-position="435">
           <caret line="29" column="84" selection-start-line="29" selection-start-column="84" selection-end-line="29" selection-end-column="84" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+    <entry file="file://$PROJECT_DIR$/client/config/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="111" selection-start-line="11" selection-start-column="111" selection-end-line="11" selection-end-column="111" />
+        <state relative-caret-position="278">
+          <caret line="208" column="65" selection-start-line="208" selection-start-column="65" selection-end-line="208" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="270">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/abc_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="63" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/DataUploads/productmaster.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/views/pages/Qart/UploadModules/uploadcommon/uploadwidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/modules/DataUploads/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="390">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/lib/images.collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
         </state>
       </provider>
     </entry>

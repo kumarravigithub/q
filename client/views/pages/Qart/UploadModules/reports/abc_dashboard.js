@@ -1,4 +1,4 @@
-Template.graphChartJs.rendered = function() {
+Template.abc_dashboard.rendered = function() {
 
 
   var lineData = {
@@ -165,3 +165,9 @@ Template.graphChartJs.rendered = function() {
   });
 
 };
+
+Template.abc_dashboard.helpers({
+  statusdoc: function() {
+    return __pre_excel_process.findOne();
+  }
+});

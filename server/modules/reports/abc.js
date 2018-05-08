@@ -85,9 +85,9 @@ report1 = function(fileInfo) {
         $set: fileInfo.status
       });
       console.log("Done for " + l);
-      if (storecode == "0020026418") {
-        console.log("PAKDAYA");
-      }
+      // if (storecode == "0020026418") {
+      //   console.log("PAKDAYA");
+      // }
     }
     fileInfo.status.message = "DONE";
     fileInfo.status.status = "DONE";
@@ -101,19 +101,48 @@ report1 = function(fileInfo) {
     }, {
       $set: fileInfo
     });
+    const fs = Npm.require('fs');
+    filePath='/home/kumar/projects/files/reports/abc.xlsx';
+     fs.unlinkSync(filePath)
+    mycsv = "Ship To Store,Entity,A,B,C,Total,A%,B%,C%";
+    fs.appendFileSync(filePath, mycsv + "\n");
+
     for (l = 0; l < result.length; l++) {
       storecode=result[l];
       storeA = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "A"}).count();
       storeB = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "B"}).count();
       storeC = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "C"}).count();
+      total=storeA+storeB+storeC;
+      storeAper=(storeA/total) * 100;
+      storeBper=(storeB/total) * 100;
+      storeCper=(storeC/total) * 100;
+
+      mycsv=storecode  + "," + "store"  + "," + storeA  + "," + storeB  + "," + storeC + "," + total + "," + storeAper + "," + storeBper + "," + storeCper;
+      fs.appendFileSync(filePath, mycsv + "\n");
+      // console.log(uniqueGencats.length);
       for(i=0;i<uniqueGencats.length;i++) {
         gencatA = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "A", gencat2:uniqueGencats[i]}).count();
         gencatB = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "B", gencat2:uniqueGencats[i]}).count();
         gencatC = products_withabc.find({shiptocustomer2: storecode, abc_store_level: "C", gencat2:uniqueGencats[i]}).count();
+        total=gencatA+gencatB+gencatC;
+        gencatAper=(gencatA/total) * 100;
+        gencatBper=(gencatB/total) * 100;
+        gencatCper=(gencatC/total) * 100;
+
+        mycsv=storecode + "," + uniqueGencats[i] + "," + gencatA + "," + gencatB  + "," + gencatC + "," + total + "," + gencatAper + "," + gencatBper + "," + gencatCper;;
+        fs.appendFileSync('/home/kumar/projects/files/reports/abc.xlsx', mycsv + "\n");
       }
     }
+    console.log("Done");
   });
-
-
 }
-// data[k].products[i].store_contrib = data[k].products[i].netretailvalue / sumofstore
+
+
+// TODO
+// JSON TO CSV for dumping the ABC analysis product wise to csv file
+// download file
+// qr code report on mobile
+// table for reports - abc analysis to be written to db collection and loaded in table
+// dashboard beautification
+// email of reports on QR code on scan
+// ABC report browsable on mobile and website

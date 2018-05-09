@@ -1,6 +1,7 @@
 Template.abc_dashboard.rendered = function() {
 
-
+  // Tooltips demo
+  $("[data-toggle=tooltip]").tooltip();
   var lineData = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [

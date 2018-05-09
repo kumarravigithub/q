@@ -28,7 +28,7 @@
         <li>
             <div>
                 <small>{{file.status.timestamp}}</small>
-                <h4><a href="{{file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></h4>
+                <h4><a href="{{getlink file.link}}?download=true" download="{{file.name}}">{{file.name}}</a></h4>
                 <p>Size: {{sizeinMB file.size}}</p><p>Rows: {{file.status.excellinecount}}</p>
                 <p>Stores: {{file.status.uniquestorecount}}</p>
                 <p>Products: {{file.status.uniqueproductcount}}</p>

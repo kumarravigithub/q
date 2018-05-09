@@ -39,6 +39,9 @@ Template.uploadForm.events({
                 uploadInstance.start();
             }
         }
+    },
+    'click #btnReset': function() {
+      swal("File Upload Blocked!", "We have temporarly blocked file upload due to the lack of uniformity in the data. This will open once the input is freezed.", "warning");
     }
 });
 

@@ -231,6 +231,15 @@ FlowRouter.route('/abc_dashboard', {
     }
 });
 
+FlowRouter.route('/abc_dashboard', {
+  subscriptions: function(params, queryParams) {
+      this.register('abc_data', Meteor.subscribe('excelimportstatus', "ANY"));
+  },
+    action: function() {
+        BlazeLayout.render("mainLayout", {content: "abc_dashboard"});
+    }
+});
+
 FlowRouter.route('/formUpload', {
     action: function() {
         BlazeLayout.render("mainLayout", {content: "formUpload"});

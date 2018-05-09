@@ -8,7 +8,7 @@
 
 FlowRouter.route('/', {
     action: function() {
-        FlowRouter.go('/dashboard1');
+        FlowRouter.go('/abc_dashboard');
     }
 });
 

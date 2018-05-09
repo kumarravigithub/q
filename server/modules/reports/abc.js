@@ -102,8 +102,12 @@ report1 = function(fileInfo) {
       $set: fileInfo
     });
     const fs = Npm.require('fs');
-    filePath='/home/kumar/projects/files/reports/abc.xlsx';
-     fs.unlinkSync(filePath)
+    filePath='/home/qart/files/reports/abc.xlsx';
+try {
+    fs.unlinkSync(filePath)
+} catch (e) {
+    //ignore
+}
     mycsv = "Ship To Store,Entity,A,B,C,Total,A%,B%,C%";
     fs.appendFileSync(filePath, mycsv + "\n");
 
@@ -130,7 +134,7 @@ report1 = function(fileInfo) {
         gencatCper=(gencatC/total) * 100;
 
         mycsv=storecode + "," + uniqueGencats[i] + "," + gencatA + "," + gencatB  + "," + gencatC + "," + total + "," + gencatAper + "," + gencatBper + "," + gencatCper;;
-        fs.appendFileSync('/home/kumar/projects/files/reports/abc.xlsx', mycsv + "\n");
+        fs.appendFileSync(filePath, mycsv + "\n");
       }
     }
     console.log("Done");

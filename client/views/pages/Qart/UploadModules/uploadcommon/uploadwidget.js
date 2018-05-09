@@ -5,9 +5,6 @@ Template.uploadForm.onCreated(function () {
 Template.uploadForm.helpers({
     currentUpload: function () {
         return Template.instance().currentUpload.get();
-    },
-    getlink: function(url) {
-      return url.replace("0.0.0.0:3000","");
     }
 });
 
@@ -54,6 +51,9 @@ Template.uploadedFiles.helpers({
     },
     sizeinMB: function (size) {
         return Math.round((size / 1024 / 1024) * 100) / 100 + " MB";
+    },
+    getlink: function(url) {
+      return url.replace("0.0.0.0:3000","");
     }
 });
 Template.uploadedFiles.events({

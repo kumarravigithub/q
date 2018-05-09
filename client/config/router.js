@@ -14,7 +14,8 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/dashboard1', {
     action: function() {
-        BlazeLayout.render("mainLayout", {content: "dashboard1"});
+      FlowRouter.go('/abc_dashboard');
+        // BlazeLayout.render("mainLayout", {content: "dashboard1"});
     }
 });
 

@@ -1,6 +1,6 @@
 Picker.route('/abcdownload', function(params, req, res, next) {
   const fs = Npm.require('fs');
-  var filePath = '/Users/kumarravi/projects/files/reports/abc.xlsx';
+  var filePath = '/home/qart/files/reports/abc.xlsx';
   var fileName = 'abc.csv';
   var data = fs.readFileSync(filePath);
   res.writeHead(200, {

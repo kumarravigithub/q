@@ -3,6 +3,8 @@ report1 = function(fileInfo) {
   console.log("Generating report");
   fileid = fileInfo._id;
   Meteor.call('getDistinctStores', fileid, function(err, result) {
+    console.log(result);
+    return;
     uniqueGencats=result.uniqueGencats;
     result=result.uniqueStores;
     for (l = 0; l < result.length; l++) {

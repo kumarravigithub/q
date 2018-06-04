@@ -1,5 +1,6 @@
 report1 = function(fileInfo) {
   // storecode = "0020013371";
+  console.log("Generating report");
   fileid = fileInfo._id;
   Meteor.call('getDistinctStores', fileid, function(err, result) {
     uniqueGencats=result.uniqueGencats;

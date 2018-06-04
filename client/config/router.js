@@ -225,6 +225,7 @@ FlowRouter.route('/abcdataupload', {
 FlowRouter.route('/abc_dashboard', {
   subscriptions: function(params, queryParams) {
       this.register('abc_data', Meteor.subscribe('excelimportstatus', "ANY"));
+      this.register('abc_data', Meteor.subscribe('reportstatus'));
   },
     action: function() {
         BlazeLayout.render("mainLayout", {content: "abc_dashboard"});

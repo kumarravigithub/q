@@ -1,12 +1,14 @@
-report1 = function(fileInfo, season) {
+report1 = function (fileInfo, season) {
   // storecode = "0020013371";
-  season='H1-18';
+  //  season='H1-18';
+  products_withabc.remove({});
   console.log("Generating report");
   fileid = fileInfo._id;
-  Meteor.call('getDistinctStores', fileid, function(err, result) {
-    uniqueGencats=result.uniqueGencats;
-    result=result.uniqueStores;
-    result=["0020027533"];
+  Meteor.call('getDistinctStores', fileid, season, function (err, result) {
+    uniqueGencats = result.uniqueGencats;
+    result = result.uniqueStores;
+    // result=["0020027533"];
+
     // console.log(result);
     // return;
     for (l = 0; l < result.length; l++) {
@@ -42,13 +44,13 @@ report1 = function(fileInfo, season) {
           data[k].products[i].gencat_contrib = data[k].products[i].netsellthrudiscountedretailvalue / data[k].sum
           gencat_contrib_sum += data[k].products[i].gencat_contrib;
           switch (true) {
-            case gencat_contrib_sum < 0.80:
+            case gencat_contrib_sum <= 0.80:
               data[k].products[i].abc_gencat_level = "A"
               break;
-            case (gencat_contrib_sum >= 0.80) && (gencat_contrib_sum < 0.95):
+            case (gencat_contrib_sum > 0.80) && (gencat_contrib_sum <= 0.95):
               data[k].products[i].abc_gencat_level = "B"
               break;
-            case (gencat_contrib_sum >= 0.95) && (gencat_contrib_sum < 1):
+            case (gencat_contrib_sum > 0.95) && (gencat_contrib_sum <= 1):
               data[k].products[i].abc_gencat_level = "C"
               break;
             default:
@@ -95,30 +97,38 @@ report1 = function(fileInfo, season) {
       //   console.log("PAKDAYA");
       // }
     }
-    
+
     const fs = Npm.require('fs');
-    filePath='/home/kumar/projects/files/reports/abc.csv';
-try {
-    console.log("Deleting existing report file");
-    fs.unlinkSync(filePath)
-} catch (e) {
-    //ignore
-}
+    filePath = MetaSetting.reportPath + "/" + season + '.csv';
+    try {
+      console.log("Deleting existing report file");
+      fs.unlinkSync(filePath);
+    } catch (e) {
+      //ignore
+    }
     mycsv = "Ship To Store,Entity,A,B,C,Total,A%,B%,C%";
     fs.appendFileSync(filePath, mycsv + "\n");
-    var lengg=result.length;
+    var lengg = result.length;
     for (l = 0; l < result.length; l++) {
+      storecode = result[l];
+      storeA = products_withabc.find({
+        shiptocustomer: storecode,
+        abc_store_level: "A"
+      }).count();
+      storeB = products_withabc.find({
+        shiptocustomer: storecode,
+        abc_store_level: "B"
+      }).count();
+      storeC = products_withabc.find({
+        shiptocustomer: storecode,
+        abc_store_level: "C"
+      }).count();
+      total = storeA + storeB + storeC;
+      storeAper = (storeA / total) * 100;
+      storeBper = (storeB / total) * 100;
+      storeCper = (storeC / total) * 100;
 
-      storecode=result[l];
-      storeA = products_withabc.find({shiptocustomer: storecode, abc_store_level: "A"}).count();
-      storeB = products_withabc.find({shiptocustomer: storecode, abc_store_level: "B"}).count();
-      storeC = products_withabc.find({shiptocustomer: storecode, abc_store_level: "C"}).count();
-      total=storeA+storeB+storeC;
-      storeAper=(storeA/total) * 100;
-      storeBper=(storeB/total) * 100;
-      storeCper=(storeC/total) * 100;
-
-      mycsv=storecode  + "," + "store"  + "," + storeA  + "," + storeB  + "," + storeC + "," + total + "," + storeAper + "," + storeBper + "," + storeCper;
+      mycsv = storecode + "," + "store" + "," + storeA + "," + storeB + "," + storeC + "," + total + "," + storeAper + "," + storeBper + "," + storeCper;
       fs.appendFileSync(filePath, mycsv + "\n");
       console.log("[" + l + "/" + lengg + "]");
       console.log("Writing :" + mycsv);
@@ -131,20 +141,33 @@ try {
         $set: fileInfo.status
       });
       // console.log(uniqueGencats.length);
-      for(i=0;i<uniqueGencats.length;i++) {
-        gencatA = products_withabc.find({shiptocustomer: storecode, abc_store_level: "A", gencat:uniqueGencats[i]}).count();
-        gencatB = products_withabc.find({shiptocustomer: storecode, abc_store_level: "B", gencat:uniqueGencats[i]}).count();
-        gencatC = products_withabc.find({shiptocustomer: storecode, abc_store_level: "C", gencat:uniqueGencats[i]}).count();
-        total=gencatA+gencatB+gencatC;
-        gencatAper=(gencatA/total) * 100;
-        gencatBper=(gencatB/total) * 100;
-        gencatCper=(gencatC/total) * 100;
+      for (i = 0; i < uniqueGencats.length; i++) {
+        gencatA = products_withabc.find({
+          shiptocustomer: storecode,
+          abc_gencat_level: "A",
+          gencat: uniqueGencats[i]
+        }).count();
+        gencatB = products_withabc.find({
+          shiptocustomer: storecode,
+          abc_gencat_level: "B",
+          gencat: uniqueGencats[i]
+        }).count();
+        gencatC = products_withabc.find({
+          shiptocustomer: storecode,
+          abc_gencat_level: "C",
+          gencat: uniqueGencats[i]
+        }).count();
+        total = gencatA + gencatB + gencatC;
+        gencatAper = (gencatA / total) * 100;
+        gencatBper = (gencatB / total) * 100;
+        gencatCper = (gencatC / total) * 100;
 
-        mycsv=storecode + "," + uniqueGencats[i] + "," + gencatA + "," + gencatB  + "," + gencatC + "," + total + "," + gencatAper + "," + gencatBper + "," + gencatCper;;
+        mycsv = storecode + "," + uniqueGencats[i] + "," + gencatA + "," + gencatB + "," + gencatC + "," + total + "," + gencatAper + "," + gencatBper + "," + gencatCper;;
         fs.appendFileSync(filePath, mycsv + "\n");
         console.log("Writing :" + mycsv);
       }
     }
+
     fileInfo.status.message = "DONE";
     fileInfo.status.status = "DONE";
     __pre_excel_process.upsert({
@@ -157,12 +180,23 @@ try {
     }, {
       $set: fileInfo
     });
+    console.log("yo")
+
     console.log("Done");
+    tasks.update({
+      season: season
+    }, {
+      $set: {
+        status: "DONE",
+        href:"/abcdownload/" + season
+      }
+    });
+    isTaskRunning = false;
   });
 }
 
 
-// TODO
+// TODO:
 // JSON TO CSV for dumping the ABC analysis product wise to csv file
 // download file
 // qr code report on mobile

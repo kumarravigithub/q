@@ -33,3 +33,20 @@ Picker.route('/abcproductwisedownload', function(params, req, res, next) {
   res.write(data);
   res.end();
 });
+
+Picker.route('/abcdownload/:_season', function(params, req, res, next) {
+  const fs = Npm.require('fs');
+  season=decodeURI(params._season);
+
+  var filePath = MetaSetting.reportPath + "/" + season + ".csv";
+
+  var data = fs.readFileSync(filePath);
+  console.log("downloading..");
+  res.writeHead(200, {
+    'Cache-Control': 'private, max-age=0, no-cache, must-revalidate, post-check=0, pre-check=0',
+    'Content-Type': 'text/csv',
+    'Content-Disposition': 'attachment; fileName= "' + params._season + ".csv" + '";'
+  });
+  res.write(data);
+  res.end();
+});

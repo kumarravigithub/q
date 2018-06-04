@@ -5,6 +5,9 @@ Template.uploadForm.onCreated(function () {
 Template.uploadForm.helpers({
     currentUpload: function () {
         return Template.instance().currentUpload.get();
+    },
+    uploadedFiles: function () {
+        return Images.find();
     }
 });
 
@@ -13,7 +16,7 @@ Template.uploadForm.events({
         if (e.currentTarget.files && e.currentTarget.files[0]) {
             // We upload only one file, in case
             // there was multiple files selected
-            var whattoupload=$(e.currentTarget).attr("what");
+            var whattoupload = $(e.currentTarget).attr("what");
             var file = e.currentTarget.files[0];
             if (file) {
                 var uploadInstance = Images.insert({
@@ -40,8 +43,26 @@ Template.uploadForm.events({
             }
         }
     },
-    'click #btnReset': function() {
-      swal("File Upload Blocked!", "We have temporarly blocked file upload due to the lack of uniformity in the data. This will open once the input is freezed.", "warning");
+    'click #btnReset': function () {
+        swal({
+            title: "The portal will be RESET. Are you sure?",
+            text: "You will not be able to recover any files or report data rows, products, store data and reports. If you have not downloaded the reports download and save it now on your local computer!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, RESET it!",
+            closeOnConfirm: false
+        }, function () {
+            Meteor.call('resetPortal', function (err, result) {
+                if (err) {
+                    swal("Can't Delete!", "There was some error, please check browser console.", "warning");
+                } else {
+                    console.log(result);
+                    swal("PORTAL RESET!", "This ABC Portal has been reset.", "success");
+                }
+            });
+
+        });
     }
 });
 
@@ -52,8 +73,8 @@ Template.uploadedFiles.helpers({
     sizeinMB: function (size) {
         return Math.round((size / 1024 / 1024) * 100) / 100 + " MB";
     },
-    getlink: function(url) {
-      return url.replace("0.0.0.0:3000","/");
+    getlink: function (url) {
+        return url.replace("0.0.0.0:3000", "/");
     }
 });
 Template.uploadedFiles.events({
@@ -73,6 +94,27 @@ Template.uploadedFiles.events({
                     swal("Can't Delete!", "There was some error, please check browser console.", "warning");
                 } else {
                     swal("Deleted!", "Your file has been deleted.", "success");
+                }
+            });
+
+        });
+    },
+    'click #btnReset': function () {
+        swal({
+            title: "The portal will be RESET. Are you sure?",
+            text: "You will not be able to recover any files or report data rows, products, store data and reports. If you have not downloaded the reports download and save it now on your local computer!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, RESET it!",
+            closeOnConfirm: false
+        }, function () {
+            Meteor.call('resetPortal', function (err, result) {
+                if (err) {
+                    swal("Can't Delete!", "There was some error, please check browser console.", "warning");
+                } else {
+                    console.log(result);
+                    swal("PORTAL RESET!", "This ABC Portal has been reset.", "success");
                 }
             });
 

@@ -1,3 +1,8 @@
+Template.abc_dashboard.created = function() {
+  this.seasons = new ReactiveVar( [] );
+};
+
+
 Template.abc_dashboard.rendered = function() {
 
   // Tooltips demo
@@ -97,12 +102,14 @@ Template.abc_dashboard.rendered = function() {
   var dynamicColors = function() {
     return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
   };
+  const instance = Template.instance();
   Meteor.call('getSeason', function(err, result) {
     if (err) {
       console.log(err);
       return;
     }
-    console.log(result);
+    instance.seasons.set(result);
+    
   });
   Meteor.call('callme', function(err, result) {
     if (err) {
@@ -176,5 +183,79 @@ Template.abc_dashboard.rendered = function() {
 Template.abc_dashboard.helpers({
   statusdoc: function() {
     return __pre_excel_process.findOne();
+  },
+  seasons: function() {
+    console.log(Template.instance().seasons.get());
+    return Template.instance().seasons.get();
+  },
+  seasonlabel: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return season;
+    } else {
+      if(a.status=="DONE") {
+       return season; 
+      } else {
+      return a.status;
+      }
+    }
+  },
+  seasonhref: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return "#";
+    } else {
+      return a.href;
+    }
+  },
+  seasontarget: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return "";
+    } else {
+      return "_blank";
+    }
+  },
+  seasonclass: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return "btn-success";
+    } else {
+      if(a.status=="DONE") {
+        return "btn-primary"; 
+      } else {
+        return "btn-danger"; 
+      }
+    }
+  },
+  importStatus: function(isDone=true) {
+    statust = __pre_excel_process.findOne({});
+    if (statust) {
+      if (statust.status == 'na' || statust.status=='DONE') {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  },
+  statusdoc: function() {
+    return __pre_excel_process.findOne();
+  }
+});
+
+Template.abc_dashboard.events({
+  'click .abcdownload': function(event, template) {
+    var season=$(event.currentTarget).attr("season-data");
+    Meteor.call('runABC',season ,"wW22npzrJJoFaC6CW",function(err, result) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      instance.seasons.set(result);
+      
+    });
+    //wW22npzrJJoFaC6CW
   }
 });

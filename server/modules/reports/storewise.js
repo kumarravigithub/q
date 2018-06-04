@@ -1,9 +1,9 @@
 Meteor.methods({
-  getDistinctStores: function(fileid) {
-    result=product.find({fileid:fileid},{fields: {'onlyThisField':1}}).fetch();
-    console.log(result);
-    const uniqueStores = [...new Set(result.map(item => item.shiptocustomer2))];
-    const uniqueGencats = [...new Set(result.map(item => item.gencat2))];
+  getDistinctStores: function(fileid, season) {
+    season="H1-18";
+    result=product.find({fileid:fileid, seasontoconsider:season},{fields: {'shiptocustomer':1, 'gencat':1}}).fetch();
+    const uniqueStores = [...new Set(result.map(item => item.shiptocustomer))];
+    const uniqueGencats = [...new Set(result.map(item => item.gencat))];
     return {uniqueStores:uniqueStores, uniqueGencats:uniqueGencats};
     // return Meteor.wrapAsync(callback => {
     //   product.rawCollection().distinct('shiptocustomer2', callback);
@@ -12,6 +12,11 @@ Meteor.methods({
   getDistinctProducts: function() {
     return Meteor.wrapAsync(callback => {
       product.rawCollection().distinct('product', callback);
+    })();
+  },
+  getDistinctSeason: function() {
+    return Meteor.wrapAsync(callback => {
+      product.rawCollection().distinct('seasontoconsider', callback);
     })();
   },
   getDistinctCatMaster: function() {
@@ -31,5 +36,10 @@ Meteor.methods({
     });
     console.log(returnValue);
     return returnValue;
+  },
+  getSeason : function() {
+    var result = Meteor.call('getDistinctSeason');
+    console.log("dsds");
+    return result;
   }
 });

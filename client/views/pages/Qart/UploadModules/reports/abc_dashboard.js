@@ -97,7 +97,13 @@ Template.abc_dashboard.rendered = function() {
   var dynamicColors = function() {
     return '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
   };
-
+  Meteor.call('getSeason', function(err, result) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(result);
+  });
   Meteor.call('callme', function(err, result) {
     if (err) {
       console.log(err);

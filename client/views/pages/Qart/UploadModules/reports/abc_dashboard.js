@@ -236,6 +236,18 @@ Template.abc_dashboard.helpers({
       }
     }
   },
+  seasondisabled: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return "disabled";
+    } else {
+      if(a.status=="DONE") {
+        return ""; 
+      } else {
+        return "disabled"; 
+      }
+    }
+  },
   importStatus: function(isDone=true) {
     statust = __pre_excel_process.findOne({});
     if (statust) {

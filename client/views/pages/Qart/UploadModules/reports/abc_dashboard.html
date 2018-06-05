@@ -10,7 +10,7 @@
                     <div class="row vertical-align">
                         <center>
                             {{#each season in seasons}}
-                            <a type="button" class="btn {{seasonclass(season)}}" href="{{seasonhreffull(season)}}" target="{{seasontarget(season)}}">Full: {{seasonlabel(season)}}</a>
+                            <a type="button" class="btn {{seasonclass(season)}} {{seasondisabled(season)}}" href="{{seasonhreffull(season)}}" target="{{seasontarget(season)}}">Full: {{seasonlabel(season)}}</a>
                             {{/each}}
                         </center>
                     </div>

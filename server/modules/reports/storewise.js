@@ -41,7 +41,9 @@ Meteor.methods({
     returnResult=[];
     for(i=0;i<=result.length;i++) {
       if(result[i]) {
+        if(result[i]!="OLD") {
         returnResult.push(result[i]);
+        }
       }
     }
     console.log(returnResult);

@@ -1,7 +1,7 @@
 report1 = function (fileInfo, season) {
   // storecode = "0020013371";
   //  season='H1-18';
-  products_withabc.remove({});
+  //products_withabc.remove({});
   console.log("Generating report");
   fileid = fileInfo._id;
   Meteor.call('getDistinctStores', fileid, season, function (err, result) {

@@ -4,20 +4,19 @@
     {{> pageHeading title='Master Stats' category='Graphs' }}
 
     <div class="wrapper wrapper-content animated fadeInRight">
-      <div class="row">
-          <div class="col-lg-2">
-              <div class="widget style1 navy-bg">
-                  <div class="row vertical-align">
-                      <div class="col-xs-3">
-                          <i class="fa fa-shopping-cart fa-3x" data-toggle="tooltip" data-placement="right" title="Number of stores imported"></i>
-                      </div>
-                      <div class="col-xs-9 text-right">
-                          <h2 class="font-bold" data-toggle="tooltip" data-placement="right" title="Number of stores imported">{{statusdoc.uniquestorecount}}</h2>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-2">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="widget style1 red-bg">
+                    <div class="row vertical-align">
+                        <center>
+                            {{#each season in seasons}}
+                            <a type="button" class="btn {{seasonclass(season)}}" href="{{seasonhreffull(season)}}" target="{{seasontarget(season)}}">Full: {{seasonlabel(season)}}</a>
+                            {{/each}}
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-2">
               <div class="widget style1 navy-bg">
                   <div class="row vertical-align">
                       <div class="col-xs-3">
@@ -40,71 +39,71 @@
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="col-lg-6">
-              <div class="widget style1 yellow-bg">
-                  <div class="row vertical-align">
-                    <center>
-                    {{#each season in seasons}}
-                      <a type="button" class="btn {{seasonclass(season)}} abcdownload" href="{{seasonhref(season)}}" target='{{seasontarget(season)}}' season-data="{{season}}">{{seasonlabel(season)}}</a>
-                    {{/each}}
-                    </center>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-            {{#if importStatus}}
-            
-            {{else}}
-            <!-- TODO: 2 cases, DONE with import (to be implemented) or, processing (already implemented) -->
-            <div class="widget red-bg p-lg text-center">
-                <div class="m-b-md">
-                    <i class="fa fa-gear fa-4x shake-little shake-constant"></i>
-                    <i class="gear"></i><i class="gear"></i>
-                    <h1 class="m-xs">{{statusdoc.message}}</h1>
-                    <h3 class="font-bold no-margins">
-                      Rows Imported : {{statusdoc.excellinecount}}
-                    </h3>
-                    <small>Unique Stores : {{statusdoc.uniquestorecount}}</small>
-                    <small>Unique Products : {{statusdoc.uniqueproductcount}}</small>
-                    <small>Unique Gencats : {{statusdoc.uniquegencat}}</small>
-                </div>
-            </div>
-            {{/if}}
-        </div>
-    </div>
-      <div class="row">
-        <div class="col-lg-6">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>Pie yo </h5>
-
-                    {{>iboxTools}}
-                </div>
-                <div class="ibox-content">
-                    <div>
-                        <canvas id="doughnutChart" height="140"></canvas>
+          </div> -->
+            <div class="col-lg-6">
+                <div class="widget style1 yellow-bg">
+                    <div class="row vertical-align">
+                        <center>
+                            {{#each season in seasons}}
+                            <a type="button" class="btn {{seasonclass(season)}} abcdownload" href="{{seasonhref(season)}}" target='{{seasontarget(season)}}'
+                                season-data="{{season}}">{{seasonlabel(season)}}</a>
+                            {{/each}}
+                        </center>
                     </div>
                 </div>
             </div>
         </div>
-          <div class="col-lg-6">
-              <div class="ibox float-e-margins">
-                  <div class="ibox-title">
-                      <h5>Polar Area</h5>
+        <div class="row">
+            <div class="col-lg-12">
+                {{#if importStatus}} {{else}}
+                <!-- TODO: 2 cases, DONE with import (to be implemented) or, processing (already implemented) -->
+                <div class="widget red-bg p-lg text-center">
+                    <div class="m-b-md">
+                        <i class="fa fa-gear fa-4x shake-little shake-constant"></i>
+                        <i class="gear"></i>
+                        <i class="gear"></i>
+                        <h1 class="m-xs">{{statusdoc.message}}</h1>
+                        <h3 class="font-bold no-margins">
+                            Rows Imported : {{statusdoc.excellinecount}}
+                        </h3>
+                        <small>Unique Stores : {{statusdoc.uniquestorecount}}</small>
+                        <small>Unique Products : {{statusdoc.uniqueproductcount}}</small>
+                        <small>Unique Gencats : {{statusdoc.uniquegencat}}</small>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Pie yo </h5>
 
-                      {{>iboxTools}}
-                  </div>
-                  <div class="ibox-content">
-                      <div class="text-center">
-                          <canvas id="polarChart" height="140"></canvas>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                        {{>iboxTools}}
+                    </div>
+                    <div class="ibox-content">
+                        <div>
+                            <canvas id="doughnutChart" height="140"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Polar Area</h5>
+
+                        {{>iboxTools}}
+                    </div>
+                    <div class="ibox-content">
+                        <div class="text-center">
+                            <canvas id="polarChart" height="140"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">

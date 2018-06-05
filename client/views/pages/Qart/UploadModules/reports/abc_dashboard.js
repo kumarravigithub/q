@@ -208,6 +208,14 @@ Template.abc_dashboard.helpers({
       return a.href;
     }
   },
+  seasonhreffull: function(season) {
+    var a=tasks.findOne({season:season});
+    if(typeof a == 'undefined') {
+      return "#";
+    } else {
+      return "/full" + a.href;
+    }
+  },
   seasontarget: function(season) {
     var a=tasks.findOne({season:season});
     if(typeof a == 'undefined') {

@@ -117,15 +117,18 @@ report1 = function (fileInfo, season) {
       storecode = result[l];
       storeA = products_withabc.find({
         shiptocustomer: storecode,
-        abc_store_level: "A"
+        abc_store_level: "A",
+        seasontoconsider: season
       }).count();
       storeB = products_withabc.find({
         shiptocustomer: storecode,
-        abc_store_level: "B"
+        abc_store_level: "B",
+        seasontoconsider: season
       }).count();
       storeC = products_withabc.find({
         shiptocustomer: storecode,
-        abc_store_level: "C"
+        abc_store_level: "C",
+        seasontoconsider: season
       }).count();
       total = storeA + storeB + storeC;
       storeAper = (storeA / total) * 100;

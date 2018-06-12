@@ -13,7 +13,9 @@ report1 = function (fileInfo, season) {
     // return;
     for (l = 0; l < result.length; l++) {
       storecode = result[l];
+      if(storecode=="0020015779") {
       console.log(storecode);
+      }
       return;
       var resultQ = product.find({
         shiptocustomer: storecode,

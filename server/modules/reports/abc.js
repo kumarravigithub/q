@@ -18,10 +18,10 @@ report1 = function (fileInfo, season) {
         seasontoconsider: season
       }).fetch();
       data = {}
-      if (storecode == "0020015779") {
-        console.log(resultQ.length);
-      }
-      return;
+      // if (storecode == "0020015779") {
+      //   console.log(resultQ.length);
+      // }
+      // return;
       // categorise in gencats and find their sum.
       for (i = 0; i < resultQ.length; i++) {
         if (typeof data[resultQ[i].gencat] === 'undefined') {

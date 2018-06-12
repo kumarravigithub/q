@@ -149,17 +149,20 @@ report1 = function (fileInfo, season) {
         gencatA = products_withabc.find({
           shiptocustomer: storecode,
           abc_gencat_level: "A",
-          gencat: uniqueGencats[i]
+          gencat: uniqueGencats[i],
+          seasontoconsider: season
         }).count();
         gencatB = products_withabc.find({
           shiptocustomer: storecode,
           abc_gencat_level: "B",
-          gencat: uniqueGencats[i]
+          gencat: uniqueGencats[i],
+          seasontoconsider: season
         }).count();
         gencatC = products_withabc.find({
           shiptocustomer: storecode,
           abc_gencat_level: "C",
-          gencat: uniqueGencats[i]
+          gencat: uniqueGencats[i],
+          seasontoconsider: season
         }).count();
         total = gencatA + gencatB + gencatC;
         gencatAper = (gencatA / total) * 100;

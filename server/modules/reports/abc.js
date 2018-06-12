@@ -13,15 +13,15 @@ report1 = function (fileInfo, season) {
     // return;
     for (l = 0; l < result.length; l++) {
       storecode = result[l];
-      if(storecode=="0020015779") {
-      console.log(storecode);
-      }
-      return;
       var resultQ = product.find({
         shiptocustomer: storecode,
         seasontoconsider: season
       }).fetch();
       data = {}
+      if (storecode == "0020015779") {
+        console.log(resultQ.length);
+      }
+      return;
       // categorise in gencats and find their sum.
       for (i = 0; i < resultQ.length; i++) {
         if (typeof data[resultQ[i].gencat] === 'undefined') {
@@ -192,7 +192,7 @@ report1 = function (fileInfo, season) {
     }, {
       $set: {
         status: "DONE",
-        href:"/abcdownload/" + season
+        href: "/abcdownload/" + season
       }
     });
     isTaskRunning = false;

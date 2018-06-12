@@ -13,6 +13,8 @@ report1 = function (fileInfo, season) {
     // return;
     for (l = 0; l < result.length; l++) {
       storecode = result[l];
+      console.log(storecode);
+      return;
       var resultQ = product.find({
         shiptocustomer: storecode,
         seasontoconsider: season

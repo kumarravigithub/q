@@ -176,7 +176,6 @@ report1 = function (fileInfo, season) {
         fs.appendFileSync(filePath, mycsv + "\n");
         console.log("Writing :" + mycsv);
       }
-      break;
     }
 
     fileInfo.status.message = "DONE";
